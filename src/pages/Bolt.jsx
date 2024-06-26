@@ -5,6 +5,8 @@ import fleetOwner from "../assets/images/fleet-owner.webp"
 import restaurant from "../assets/images/restaurant-payment.webp"
 import BoltBtn from "./BoltBtn";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { pathBolt, pathContact } from "../pathNames";
 function Bolt() {
   let allDetails = [
     {
@@ -112,11 +114,13 @@ function Bolt() {
   }
   return (
     <div className="font-Roboto text-[1.1rem] ">
+  
+      <Link to="/">home</Link>
+      <Link to={pathContact}>Contact</Link>
+      <Link to={pathBolt}>Bolt</Link>
       <h1 className="font-bold, text-4xl text-center">Earn money with Bolt</h1>
       <div className="text-center">
-
-      {allDetails.map((detail) => (
-
+        {allDetails.map((detail) => (
           <BoltBtn
             key={detail.id}
             onClick={() => {
@@ -137,7 +141,7 @@ function Bolt() {
                   }
             }
           />
-      ))}
+        ))}
       </div>
       {allDetails.map(
         (detail) =>
